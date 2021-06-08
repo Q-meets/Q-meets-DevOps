@@ -2,7 +2,7 @@
 from tkinter import StringVar
 import divide_service as divide_service
 import multiply_service as multiply_service
-
+import subtract_service as subtract_service
 
 class CalculationService:
     """""Class for keeping track of, and evaluating calculations"""""
@@ -34,6 +34,8 @@ class CalculationService:
                 total = str(divide_service.divide(self.expression))
             if "*" in self.expression:
                 total = str(multiply_service.multiply(self.expression))
+            if "-" in self.expression:
+                total = str(subtract_service.subtract(self.expression))
             else:
                 total = str(eval(self.expression))
                
